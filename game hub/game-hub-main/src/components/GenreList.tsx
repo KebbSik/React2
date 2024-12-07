@@ -21,7 +21,12 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   if (error) return null;
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <>
+        <Spinner />
+      </>
+    );
 
   return (
     <>
@@ -29,7 +34,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
         Genres
       </Heading>
       <List>
-        {data.map((genre) => (
+        {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
               <Image

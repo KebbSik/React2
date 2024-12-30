@@ -6,15 +6,20 @@ import { Dispatch } from "react";
 import NavBar from "./state-management/NavBar";
 import HomePage from "./state-management/HomePage";
 import TaskContext from "./state-management/contexts/tasksContext";
+import authReducer from "./state-management/reducers/authReducer";
+import AuthContext from "./state-management/contexts/authContext";
 
 function App() {
-  const [tasks, dispatch] = useReducer(taskReducer, []);
+  const [tasks, taskDispatch] = useReducer(taskReducer, []);
+  const [user, userDispatch] = useReducer(authReducer, "");
 
   return (
-    <TaskContext.Provider value={{ tasks, dispatch }}>
-      <NavBar />
-      <HomePage />
-    </TaskContext.Provider>
+    <AuthContext.Provider value={{ user, dispatch: userDispatch }}>
+      <TaskContext.Provider value={{ tasks, dispatch: taskDispatch }}>
+        <NavBar />
+        <HomePage />
+      </TaskContext.Provider>
+    </AuthContext.Provider>
   );
 }
 

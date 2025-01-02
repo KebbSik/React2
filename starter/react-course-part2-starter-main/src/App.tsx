@@ -2,15 +2,15 @@ import "./App.css";
 import AuthProvider from "./state-management/AuthProvider";
 import HomePage from "./state-management/HomePage";
 import NavBar from "./state-management/NavBar";
-import TaskProvider from "./state-management/TasksProvider";
+import { TasksProvider } from "./state-management/tasks";
 
 function App() {
   return (
     <AuthProvider>
-      <TaskProvider>
+      <TasksProvider>
         <NavBar />
         <HomePage />
-      </TaskProvider>
+      </TasksProvider>
     </AuthProvider>
   );
 }

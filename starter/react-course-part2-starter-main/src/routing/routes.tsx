@@ -2,7 +2,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import HomePage from "./HomePage";
 import UserList from "./UserList";
 import ContactPage from "./ContactPage";
-import UserDetail from "./UserDetailPage";
+import UserDetail from "./UserDetail";
 import Layout from "./Layout";
 import UsersPage from "./UsersPage";
 

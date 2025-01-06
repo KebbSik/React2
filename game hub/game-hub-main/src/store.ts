@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { Platform } from "./entities/Platform";
 
 interface GameQuery {
   genreId?: number;

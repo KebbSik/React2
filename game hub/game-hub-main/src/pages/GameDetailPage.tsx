@@ -7,6 +7,7 @@ import DefinitionItem from "../components/DefinitionItem";
 import CriticScore from "../components/CriticScore";
 import GameAtributes from "../components/GameAtributes";
 import GameTrailer from "../components/GameTrailer";
+import GameScreenshots from "../components/GameScreenshots";
 
 const GameDetailPage = () => {
   const [shownLines, setShownLines] = useState(2);
@@ -25,6 +26,7 @@ const GameDetailPage = () => {
       <ExpandableText>{game.description_raw}</ExpandableText>
       <GameAtributes game={game} />
       <GameTrailer gameId={game.id} />
+      <GameScreenshots gameId={game.id} />
     </>
   );
 };
